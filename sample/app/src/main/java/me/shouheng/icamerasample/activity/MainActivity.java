@@ -10,7 +10,6 @@ import android.widget.CompoundButton;
 import me.shouheng.icamera.config.ConfigurationProvider;
 import me.shouheng.icamera.config.creator.CameraManagerCreator;
 import me.shouheng.icamera.config.creator.CameraPreviewCreator;
-import me.shouheng.icamera.config.creator.impl.Camera1OnlyCreator;
 import me.shouheng.icamera.config.creator.impl.Camera2OnlyCreator;
 import me.shouheng.icamera.config.creator.impl.CameraManagerCreatorImpl;
 import me.shouheng.icamera.config.creator.impl.CameraPreviewCreatorImpl;
@@ -42,15 +41,15 @@ public class MainActivity extends CommonActivity<EmptyViewModel, ActivityMainBin
         ConfigurationProvider.get().setDebug(true);
         setSupportActionBar(binding.toolbar);
 
-        binding.rbCamera1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    switchToCameraOption(0);
-                }
-            }
-        });
+//        binding.rbCamera1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    switchToCameraOption(0);
+//                }
+//            }
+//        });
         binding.rbCamera2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
@@ -120,9 +119,9 @@ public class MainActivity extends CommonActivity<EmptyViewModel, ActivityMainBin
 
         CameraManagerCreator creator;
         switch (option) {
-            case 0:
-                creator = new Camera1OnlyCreator();
-                break;
+//            case 0:
+//                creator = new Camera1OnlyCreator();
+//                break;
             case 1:
                 creator = new Camera2OnlyCreator();
                 break;
@@ -132,9 +131,9 @@ public class MainActivity extends CommonActivity<EmptyViewModel, ActivityMainBin
         ConfigurationProvider.get().setCameraManagerCreator(creator);
 
         switch (option) {
-            case 0:
-                binding.rbCamera1.setChecked(true);
-                break;
+//            case 0:
+//                binding.rbCamera1.setChecked(true);
+//                break;
             case 1:
                 binding.rbCamera2.setChecked(true);
                 break;

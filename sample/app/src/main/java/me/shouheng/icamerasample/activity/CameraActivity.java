@@ -106,7 +106,7 @@ public class CameraActivity extends CommonActivity<EmptyViewModel, ActivityCamer
                 @Override
                 public void onCameraOpenError(Throwable throwable) {
                     L.e(throwable);
-                    toast("Camera open error : $throwable");
+                    toast("Camera open error : " + throwable);
                 }
             });
         }
@@ -411,7 +411,7 @@ public class CameraActivity extends CommonActivity<EmptyViewModel, ActivityCamer
             @Override
             public void onCaptureFailed(Throwable throwable) {
                 L.e(throwable);
-                toast("onCaptureFailed : $throwable");
+                toast("onCaptureFailed : " + throwable);
             }
         });
     }
@@ -448,7 +448,7 @@ public class CameraActivity extends CommonActivity<EmptyViewModel, ActivityCamer
                 @Override
                 public void onVideoRecordError(Throwable throwable) {
                     isCameraRecording = false;
-                    toast("$throwable");
+                    toast(throwable + "");
                     L.e(throwable);
                 }
             });
